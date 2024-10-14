@@ -1,15 +1,18 @@
 <?php
-// Credenciales de acceso a la base de datos
-$DATABASE_HOST = 'localhost';
-$DATABASE_USER = 'root';
-$DATABASE_PASS = '';
-$DATABASE_NAME = 'refrigerios';
+// Configuración de la conexión a la base de datos
+$servidor = "localhost";     // Servidor de la base de datos (normalmente "localhost")
+$usuario = "root";     // Usuario de la base de datos
+$password = "";   // Contraseña de la base de datos
+$base_datos = "refrigerios";   // Nombre de la base de datos
 
-// Conexión a la base de datos
-$conexion = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
+// Crear la conexión
+$conexion = new mysqli($servidor, $usuario, $password, $base_datos);
 
-// Comprobar la conexión
-if (mysqli_connect_error()) {
-    exit('Fallo en la conexión de MySQL: ' . mysqli_connect_error());
+// Verificar la conexión
+if ($conexion->connect_error) {
+    die("Error de conexión: " . $conexion->connect_error);
 }
+
+// Establecer el conjunto de caracteres a utf8 para evitar problemas con caracteres especiales
+$conexion->set_charset("utf8");
 ?>

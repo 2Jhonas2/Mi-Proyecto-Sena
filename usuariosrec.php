@@ -58,7 +58,8 @@ $stmt->close();
     <meta charset="UTF-8">
     <title>Patio De Refrigerios</title>
     <link rel="icon" href="IMG/logo-pag.png">
-    <link rel="stylesheet" href="CSS/usuarios.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="CSS/users.css">
 </head>
 <body>
 <div>
@@ -165,6 +166,7 @@ $stmt->close();
             </main>
         </section>
         <section>
+            <a href="Informes/fpdf/reporte-usuarios.php" target="_blank" rel="noopener noreferrer" id="informe"><i class="fa-solid fa-file-pdf"></i> Generar Informe</a>
             <button id="abrirModal" class="agregar"><span>+</span></button>
 
             <dialog id="modal">

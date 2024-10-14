@@ -59,7 +59,7 @@ $usuarios_result = $conexion->query("
     <meta charset="UTF-8">
     <title>Patio De Refrigerios</title>
     <link rel="icon" href="IMG/logo-pag.png">
-    <link rel="stylesheet" href="CSS/usuarios.css">
+    <link rel="stylesheet" href="CSS/users.css">
 </head>
 <body>
 <div>

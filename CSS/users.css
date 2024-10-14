@@ -46,7 +46,18 @@ li a:hover {
 a{
 	text-decoration: none;
 	color: #ffffff;
+	cursor: pointer;
 }
+
+.Ah2{
+	font-family: georgia, serif;
+	font-size: 180%;
+	margin-top: .2em;
+	margin-bottom: .5em;
+	text-shadow: .04em .01em #e20404;
+	color: #000;
+}
+
 .C-S{
 	display:block;
 	position: absolute;
@@ -65,114 +76,28 @@ article{
 	scrollbar-width: none;
 	text-align: center;
 	background-color: rgba(255, 255, 255, 0.4);
-	overflow: hidden;
 }
-.Ah2{
+.tablas{
+	position: absolute;
+	width: 90%;
+	left: 2em;
+	right: 2em;
+	font-size: 110%;
+	border: solid;
+	overflow: scroll;
+	scrollbar-width: none;	
+}
+
+h2{
 	font-family: georgia, serif;
-	font-size: 230%;
-	margin-top: .2em;	
+	font-size: 2em;
+	margin-top: .2em;
+	margin-bottom: .2em;
 	text-shadow: .04em .01em #e20404;
-	color: #000;
 }
-.carrusel{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-	margin-left: 8%;
-    width: 85%;
-    height: 65vh;
-}
-
-.atras{
-	position: absolute;
-	left: 2%;
-}
-
-.adelante{
-	position: absolute;
-	right: -1%;
-}
-
-.imagenes{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: end;
-}
-
-.estado-confirmado.disponible {
-    color: green; /* Color para disponible */
-}
-
-.estado-confirmado.agotado {
-    color: red; /* Color para agotado */
-}
-
-.img{
-    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.85);
-    width: 85%;
-    height: 65vh;
-    border-radius: 15px ;
-    object-fit: cover;
-    filter: saturate(175%);
-}
-
-.texto{
-    overflow: hidden;
-    position: fixed;
-	flex-direction: column;
-    flex-direction: column;
-    transform: translateY(0px);
-    backdrop-filter: blur(20px);
-    background-color: rgba(63, 106, 138, 0.21);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 30px;
-}
-
-.texto h2{
-    text-shadow: 0px 0px 15px black;
-    color: white;
-    font-weight: 300;
-    font-size: 40px;
-}
-
-.texto h1{
-    text-shadow: 0px 0px 15px black;
-    color: white;
-    font-weight: 300;
-    font-size: 40px;
-	margin: 2px;
-}
-
-.texto p{
-    align-items: center;
-    color:white;
-    font-size: 0px;
-    font-weight: 300;
-}
-
-.imagenes .texto{
-    height: 50px;
-    transition: 1s;
-}
-
-.imagenes:hover .texto{
-    transition: height 1s, width 5s, transform 1s, background-color 1s;
-    transform: translateY(-26px);
-    width: 400px;
-    height: 330px;
-    background-color: rgba(63, 106, 138, 0.71);
-	border-radius: 10%;
-}
-
-.imagenes:hover .texto p{
-    transition: font-size 0s .2s linear;
-    font-size: 20px;
-    font-weight: 300;
-    text-shadow: 0px 0px 10px #000000;
+p{
+	font-size: 1.8em;
+	background-color: rgba(255, 255, 255, 0.4);
 }
 .agregar{ 
 	position: fixed;
@@ -189,13 +114,18 @@ article{
 	background-image: linear-gradient(rgb(4, 117, 0),rgb(15, 196, 15),rgb(4, 117, 0));
 }
 
+.CAJA {
+    text-align: center; /* Centramos el contenido del formulario */
+}
+
 dialog {
     border: solid 2px #000000;
-	background-color: rgba(170, 166, 159, 0.9);
     border-radius: 8px;
     padding: 20px;
-    width: 25%; /* Ajusta el ancho según sea necesario */
-	overflow: hidden;
+	background-color: rgba(170, 166, 159, 0.9);
+    width: 20%; /* Ajusta el ancho según sea necesario */
+	overflow: scroll;
+	scrollbar-width: none;
 }
 
 dialog::backdrop {
@@ -206,18 +136,33 @@ dialog h3 {
     margin: 0 0 10px;
 }
 
-.btn{
+.other {
     background-image: linear-gradient(rgb(117, 0, 0),rgb(212, 15, 15),rgb(117, 0, 0));
     color: white;
     border: none;
     padding: 10px 15px;
     cursor: pointer;
     border-radius: 4px;
+}
+
+.other:hover {
+    background-image: linear-gradient(rgb(4, 117, 0),rgb(15, 196, 15),rgb(4, 117, 0)); /* Cambiar color al pasar el mouse */
+}
+
+.btn{
 	padding: 10px 20px; /* Ajusta el padding según tu preferencia */
     cursor: pointer;
 }
-.btn:hover{
-	background-image: linear-gradient(rgb(4, 117, 0),rgb(15, 196, 15),rgb(4, 117, 0));
+
+#cerrarModalContraseña {
+	position: absolute;
+	top: 2%;
+	right: 2%;
+	width: 10%;
+	height: 10%;
+	cursor: pointer;
+	border: none;
+	background-color: transparent;
 }
 
 #cerrarModal{
@@ -231,20 +176,51 @@ dialog h3 {
 	background-color: transparent;
 }
 
-#IMAGEN_REFRIGERIO{
-	position: relative;
-	color: transparent;
-	left: 34%;
+#cancelar{
+	position: absolute;
+	top: 2%;
+	right: 2%;
+	width: 10%;
+	height: 10%;
+	cursor: pointer;
+	border: none;
+	background-color: transparent;
 }
 
-p {
-    font-size: 16px;
-    margin: 10px 0;
+#mod{
+	position: absolute;
+	z-index: 10;
+	background-color: rgba(170, 166, 159, 0.9);
+	border: solid;
+	left: 30%;
+	right: 30%;
+	height: 45%;
+	top: 25%;
+	border-radius: 10%;
 }
 
-strong {
-    color: #000000;
+#mod::backdrop{
+	background-color: rgba(0, 0, 0, 0.5);
 }
+
+#mod h1{
+	margin-top: 8%;
+}
+
+#informe{
+	position: absolute;
+	left: 2%;
+	bottom: 2%;
+	background-image: linear-gradient(rgb(117, 0, 0),rgb(212, 15, 15),rgb(117, 0, 0));
+	border: #fff solid;
+	padding: 10px 5px;
+	border-radius: 8%;
+}
+
+#informe:hover {
+	background-image: linear-gradient(rgb(4, 117, 0),rgb(15, 196, 15),rgb(4, 117, 0)); 
+}
+
 
 #cursos{
 	position: fixed;
@@ -259,6 +235,7 @@ strong {
 	width: 19%; /* Dos columnas en dispositivos pequeños */
     margin: 0%;
 }
+
 .curso_301{
 	display: inline-block;
 	padding: 1.5em;

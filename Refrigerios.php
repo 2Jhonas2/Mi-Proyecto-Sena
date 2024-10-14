@@ -107,7 +107,7 @@ if ($result->num_rows > 0) {
     <title>Patio De Refrigerios</title>
     <link rel="icon" href="IMG/logo-pag.png">
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="CSS/Refrigerio.css">
+    <link rel="stylesheet" type="text/css" href="CSS/refrigerios.css">
 </head>
 <body class="loggedin">
     <div>

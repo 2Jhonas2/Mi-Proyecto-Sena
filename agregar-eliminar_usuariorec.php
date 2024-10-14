@@ -107,6 +107,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         }
                         $stmt_auxiliar->close();
                     }
+                } elseif ($ID_ROL == 3) {
+                    $sql_rector = "INSERT INTO rector (ID_USUARIOS) VALUES (?)";
+                    $stmt_rector = $conexion->prepare($sql_rector);
+                    if ($stmt_rector) {
+                        $stmt_rector->bind_param("i", $ID_USUARIOS);
+                        if (!$stmt_rector->execute()) {
+                            echo "Error al agregar rector para el usuario " . ($i + 1) . ": " . $conexion->error;
+                        }
+                        $stmt_rector->close();
+                    }
                 }
 
             } else {
@@ -146,6 +156,12 @@ if (isset($_GET['accion']) && $_GET['accion'] == 'eliminar' && isset($_GET['id']
         $stmt_coordinador->bind_param("i", $ID_USUARIOS);
         $stmt_coordinador->execute();
 
+        // Eliminar de la tabla rector
+        $sql_rector = "DELETE FROM rector WHERE ID_USUARIOS = ?";
+        $stmt_rector = $conexion->prepare($sql_rector);
+        $stmt_rector->bind_param("i", $ID_USUARIOS);
+        $stmt_rector->execute();
+
         // Finalmente, eliminar de la tabla usuarios
         $sql_usuarios = "DELETE FROM usuarios WHERE ID_USUARIOS = ?";
         $stmt_usuarios = $conexion->prepare($sql_usuarios);
@@ -171,6 +187,9 @@ if (isset($_GET['accion']) && $_GET['accion'] == 'eliminar' && isset($_GET['id']
     }
     if (isset($stmt_coordinador)) {
         $stmt_coordinador->close();
+    }
+    if (isset($stmt_rector)) {
+        $stmt_rector->close();
     }
     if (isset($stmt_usuarios)) {
         $stmt_usuarios->close();
