@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Patio De Refrigerios</title>
+  <html lang="en">
+  <meta charset="UTF-8">
+  <link rel="icon" href="IMG/logo-pag.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="CSS/Login.css">
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+  <script>
+    // Función para obtener los parámetros de la URL
+    function getQueryParam(param) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(param);
+    }
+
+    // Función para mostrar alertas
+    function showAlert(message) {
+        alert(message);
+    }
+
+    // Mostrar alerta cuando la página se carga
+    window.onload = function() {
+        const error = getQueryParam('error');
+        const success = getQueryParam('success');
+
+        if (error) {
+            showAlert(error);
+        }
+
+        if (success) {
+            showAlert(success);
+        }
+    }
+</script>
+</head>
+<body>
+  <div class="main">    
+    <input type="checkbox" id="chk" aria-hidden="true">
+
+      <div class="signup"> 
+        <form action="autenticacion.php" method="post">
+          <label for="NOMBRE_USUARIO" aria-hidden="true">iniciar sesión</label>
+          <input for="NOMBRE_USUARIO" type="text" name="NOMBRE_USUARIO" placeholder="Usuario" id="NOMBRE_USUARIO" required="">
+          <input for="CCONTRASENA_USUARIO" type="password" name="CONTRASENA_USUARIO" placeholder="Contrasena" id="CONTRASENA_USUARIO" required>
+          <button type="submit" value="acceder">iniciar sesión</button>
+        </form>
+      </div>
+  </div>
+</body>
+</html>
